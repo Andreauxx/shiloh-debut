@@ -1,0 +1,216 @@
+.rsvp {
+  position: relative;
+  padding: var(--section-py) 0;
+}
+
+.rsvp__container {
+  display: flex;
+  justify-content: center;
+}
+
+.rsvp__card {
+  position: relative;
+  background: var(--warm-white);
+  border-radius: var(--radius-lg);
+  padding: 44px 36px 40px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(169, 216, 245, 0.15);
+}
+
+.rsvp__decor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.rsvp__decor--tl {
+  top: -12px;
+  left: -8px;
+}
+
+.rsvp__decor--br {
+  bottom: -8px;
+  right: -6px;
+  animation-delay: 1.5s;
+}
+
+/* Typography */
+.rsvp__heading {
+  font-size: 0.85rem;
+  color: var(--text);
+  letter-spacing: 0.4em;
+  margin-bottom: 4px;
+}
+
+.rsvp__subheading {
+  font-size: 1.15rem;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+/* Dev notice */
+.rsvp__dev-notice {
+  background: var(--yellow-pale);
+  border: 1px solid var(--butter);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  font-size: 0.75rem;
+  color: var(--text);
+}
+
+/* Form */
+.rsvp__form {
+  text-align: left;
+}
+
+.rsvp__field {
+  margin-bottom: 20px;
+}
+
+.rsvp__label {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--text);
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+}
+
+.rsvp__input,
+.rsvp__textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--cream);
+  border: 1.5px solid rgba(169, 216, 245, 0.2);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--text);
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+  outline: none;
+}
+
+.rsvp__input:focus,
+.rsvp__textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(169, 216, 245, 0.2);
+}
+
+.rsvp__input--error {
+  border-color: #E8A0A0;
+}
+
+.rsvp__input--number {
+  width: 100px;
+  text-align: center;
+}
+
+.rsvp__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.rsvp__input::placeholder,
+.rsvp__textarea::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Attendance buttons */
+.rsvp__attendance {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rsvp__attendance-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 20px;
+  background: var(--cream);
+  border: 1.5px solid rgba(169, 216, 245, 0.2);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.rsvp__attendance-btn:hover {
+  border-color: var(--blue);
+  background: var(--blue-pale);
+}
+
+.rsvp__attendance-btn--active {
+  background: var(--blue-light);
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(169, 216, 245, 0.2);
+  font-weight: 500;
+}
+
+.rsvp__attendance-btn--decline.rsvp__attendance-btn--active {
+  background: #FEF0F0;
+  border-color: #E8C0C0;
+  box-shadow: 0 0 0 3px rgba(232, 192, 192, 0.15);
+}
+
+.rsvp__attendance-icon {
+  font-size: 1rem;
+}
+
+/* Error message */
+.rsvp__error {
+  display: block;
+  font-size: 0.72rem;
+  color: #C47070;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Submit error */
+.rsvp__submit-error {
+  background: #FEF0F0;
+  border: 1px solid #E8C0C0;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 0.8rem;
+  color: #9E5050;
+  text-align: center;
+}
+
+/* Submit button */
+.rsvp__submit {
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .rsvp__card {
+    padding: 36px 20px 32px;
+    margin: 0 8px;
+  }
+
+  .rsvp__attendance-btn {
+    padding: 12px 16px;
+    font-size: 0.8rem;
+  }
+
+  .rsvp__input,
+  .rsvp__textarea {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+}

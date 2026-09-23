@@ -1,0 +1,121 @@
+.about {
+  position: relative;
+  padding: var(--section-py) 0;
+  overflow: hidden;
+}
+
+.about__container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Floating decorations */
+.about__decor {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+.about__decor--left {
+  top: 20%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.about__decor--right {
+  bottom: 20%;
+  right: 5%;
+  animation-delay: 1.8s;
+}
+
+/* Card */
+.about__card {
+  position: relative;
+  background: var(--warm-white);
+  border-radius: var(--radius-lg);
+  padding: 44px 36px 40px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(169, 216, 245, 0.15);
+}
+
+.about__card::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(169, 216, 245, 0.2);
+  border-radius: calc(var(--radius-lg) - 2px);
+  pointer-events: none;
+}
+
+.about__card-bird {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Typography */
+.about__heading {
+  font-size: 0.72rem;
+  color: var(--text);
+  letter-spacing: 0.35em;
+  margin-bottom: 4px;
+}
+
+.about__text {
+  margin: 8px 0;
+}
+
+.about__paragraph {
+  font-size: 1.2rem;
+  color: var(--text);
+  line-height: 1.7;
+  margin: 12px 0;
+}
+
+.about__signoff {
+  margin-top: 8px;
+  color: var(--text);
+}
+
+.about__signoff-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.about__heart {
+  color: var(--blue);
+  font-size: 1.1rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .about__card {
+    padding: 36px 24px 32px;
+    margin: 0 8px;
+  }
+
+  .about__paragraph {
+    font-size: 1.05rem;
+  }
+
+  .about__decor--left {
+    left: 2%;
+    top: 8%;
+  }
+
+  .about__decor--right {
+    right: 2%;
+    bottom: 8%;
+  }
+}

@@ -1,0 +1,269 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue-pale);
+  padding: 60px 0 40px;
+  overflow: hidden;
+}
+
+.hero__bg-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__bg-decor > * {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Invitation card */
+.hero__card {
+  position: relative;
+  background: var(--warm-white);
+  border-radius: var(--radius-lg);
+  padding: 48px 36px 40px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(169, 216, 245, 0.2);
+}
+
+.hero__card::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(169, 216, 245, 0.15);
+  border-radius: calc(var(--radius-lg) - 4px);
+  pointer-events: none;
+}
+
+/* Corner decorations */
+.hero__card-decor {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+.hero__card-decor--tl {
+  top: -16px;
+  left: -12px;
+  animation-delay: 0s;
+}
+
+.hero__card-decor--tr {
+  top: -10px;
+  right: -10px;
+  animation-delay: 1.5s;
+}
+
+.hero__card-decor--bl {
+  bottom: -8px;
+  left: -8px;
+  flex-direction: row;
+  animation-delay: 0.7s;
+}
+
+.hero__card-decor--br {
+  bottom: -12px;
+  right: -10px;
+  animation-delay: 2s;
+}
+
+/* Beagle illustration */
+.hero__beagle {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.hero__beagle-img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(53, 64, 82, 0.08));
+  border-radius: var(--radius-md);
+}
+
+/* Text hierarchy */
+.hero__invited {
+  font-size: 0.65rem;
+  color: var(--text-light);
+  letter-spacing: 0.4em;
+  margin-bottom: 4px;
+}
+
+.hero__subtitle {
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.hero__name {
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.hero__name-first {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.hero__name-last {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text);
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+/* Age badge */
+.hero__age-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 12px 0 4px;
+  padding: 8px 24px;
+  background: var(--blue-light);
+  border-radius: var(--radius-xl);
+}
+
+.hero__age-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--blue-deep);
+}
+
+.hero__age-label {
+  font-size: 0.7rem;
+  color: var(--text);
+  letter-spacing: 0.2em;
+}
+
+/* Event details in hero */
+.hero__details {
+  margin: 8px 0;
+}
+
+.hero__detail {
+  font-size: 0.68rem;
+  color: var(--text);
+  letter-spacing: 0.2em;
+  margin: 4px 0;
+  line-height: 1.8;
+}
+
+/* Personal message */
+.hero__message {
+  font-size: 1.15rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin: 8px 0 20px;
+}
+
+/* Actions */
+.hero__actions {
+  margin-bottom: 24px;
+}
+
+/* Scroll indicator */
+.hero__scroll {
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  letter-spacing: 0.3em;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 0 32px;
+  }
+
+  .hero__card {
+    padding: 40px 24px 32px;
+    margin: 0 8px;
+    border-radius: var(--radius-md);
+  }
+
+  .hero__card::before {
+    inset: 6px;
+  }
+
+  .hero__name-first {
+    font-size: 1.9rem;
+  }
+
+  .hero__name-last {
+    font-size: 1.1rem;
+  }
+
+  .hero__age-number {
+    font-size: 1.3rem;
+  }
+
+  .hero__message {
+    font-size: 1rem;
+  }
+
+  .hero__card-decor--tl {
+    top: -10px;
+    left: -6px;
+  }
+  .hero__card-decor--tr {
+    top: -6px;
+    right: -6px;
+  }
+  .hero__card-decor--bl {
+    bottom: -4px;
+    left: -4px;
+  }
+  .hero__card-decor--br {
+    bottom: -8px;
+    right: -6px;
+  }
+
+  .hero__beagle {
+    margin-bottom: 12px;
+  }
+
+  .hero__beagle svg:first-child {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero__card {
+    padding: 56px 48px 48px;
+  }
+
+  .hero__name-first {
+    font-size: 2.8rem;
+  }
+
+  .hero__name-last {
+    font-size: 1.5rem;
+  }
+}

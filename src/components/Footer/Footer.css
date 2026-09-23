@@ -1,0 +1,59 @@
+.footer {
+  position: relative;
+  padding: 48px 0 100px; /* Extra bottom padding for floating nav */
+  text-align: center;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__decor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+.footer__see-you {
+  font-size: 1.3rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.footer__made {
+  font-size: 0.55rem;
+  color: var(--text-light);
+  letter-spacing: 0.3em;
+}
+
+.footer__date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-handwritten);
+}
+
+.footer__beagle {
+  margin-top: 12px;
+  opacity: 0.5;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 0 90px;
+  }
+
+  .footer__see-you {
+    font-size: 1.1rem;
+  }
+}

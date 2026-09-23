@@ -1,0 +1,296 @@
+/* ========================================
+   SHILOH'S 18TH BIRTHDAY DEBUT
+   Global Design System
+   ======================================== */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* --- CSS Custom Properties --- */
+:root {
+  /* Primary Palette */
+  --blue: #A9D8F5;
+  --blue-light: #DDEFFF;
+  --blue-pale: #EAF4FC;
+  --blue-accent: #8BC4E8;
+  --blue-deep: #6BAED4;
+
+  /* Cream & Warm Whites */
+  --cream: #FFF8EA;
+  --warm-white: #FFFDF8;
+  --paper: #FEF6E4;
+  --paper-dark: #F5E6C8;
+
+  /* Yellow Accents */
+  --butter: #F8E7A8;
+  --yellow-soft: #FFF2BF;
+  --yellow-pale: #FFF9E0;
+
+  /* Text */
+  --text: #354052;
+  --text-light: #7A8190;
+  --text-muted: #A0A8B4;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(53, 64, 82, 0.06);
+  --shadow-md: 0 4px 12px rgba(53, 64, 82, 0.08);
+  --shadow-lg: 0 8px 30px rgba(53, 64, 82, 0.10);
+  --shadow-xl: 0 12px 40px rgba(53, 64, 82, 0.12);
+  --shadow-card: 0 2px 16px rgba(169, 216, 245, 0.15), 0 4px 12px rgba(53, 64, 82, 0.06);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-handwritten: 'Caveat', cursive;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --section-py: 80px;
+  --container-max: 1100px;
+  --container-px: 24px;
+
+  /* Borders */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 0.2s;
+  --duration-normal: 0.4s;
+  --duration-slow: 0.7s;
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: var(--warm-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* --- Typography Utilities --- */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-handwritten {
+  font-family: var(--font-handwritten);
+}
+
+.uppercase-spaced {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+.uppercase-wide {
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-weight: 400;
+}
+
+/* --- Container --- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-px);
+  padding-right: var(--container-px);
+}
+
+/* --- Section Backgrounds --- */
+.bg-cream {
+  background-color: var(--cream);
+}
+
+.bg-white {
+  background-color: var(--warm-white);
+}
+
+.bg-blue-pale {
+  background-color: var(--blue-pale);
+}
+
+.bg-gingham {
+  background-color: var(--blue-light);
+  background-image:
+    linear-gradient(45deg, rgba(169, 216, 245, 0.25) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(169, 216, 245, 0.25) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(169, 216, 245, 0.25) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(169, 216, 245, 0.25) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* --- Paper Texture --- */
+.paper-texture {
+  position: relative;
+}
+
+.paper-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-accent);
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--blue-light);
+  color: var(--text);
+}
+
+/* --- Keyframe Animations --- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-5px) rotate(1deg); }
+  66% { transform: translateY(-3px) rotate(-1deg); }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes drift {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  25% { transform: translateX(5px) translateY(-8px) rotate(3deg); }
+  50% { transform: translateX(-3px) translateY(-4px) rotate(-2deg); }
+  75% { transform: translateX(4px) translateY(-10px) rotate(1deg); }
+  100% { transform: translateX(0) translateY(0) rotate(0deg); }
+}
+
+/* --- Divider --- */
+.elegant-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.elegant-divider::before,
+.elegant-divider::after {
+  content: '';
+  height: 1px;
+  width: 40px;
+  background: linear-gradient(to right, transparent, var(--blue), transparent);
+}
+
+/* --- Screen Reader Only --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 768px) {
+  :root {
+    --section-py: 56px;
+    --container-px: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-py: 44px;
+    --container-px: 16px;
+  }
+
+  html {
+    font-size: 15px;
+  }
+}

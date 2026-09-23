@@ -1,0 +1,138 @@
+.countdown {
+  position: relative;
+  padding: var(--section-py) 0;
+  text-align: center;
+}
+
+.countdown__container {
+  position: relative;
+}
+
+.countdown__decor {
+  position: absolute;
+  pointer-events: none;
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.countdown__decor--left {
+  top: 0;
+  left: 5%;
+}
+
+.countdown__decor--right {
+  top: 0;
+  right: 5%;
+  animation-delay: 1.5s;
+}
+
+.countdown__heading {
+  font-size: 0.72rem;
+  color: var(--text);
+  letter-spacing: 0.35em;
+  margin-bottom: 4px;
+}
+
+/* Countdown grid */
+.countdown__grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.countdown__number-card {
+  width: 72px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--warm-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(169, 216, 245, 0.15);
+}
+
+.countdown__number {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+  display: block;
+}
+
+.countdown__label {
+  font-size: 0.55rem;
+  color: var(--text-light);
+  letter-spacing: 0.2em;
+}
+
+/* Event over */
+.countdown__over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  padding: 32px 24px;
+  background: var(--warm-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.countdown__over-text {
+  font-size: 1.4rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Date text */
+.countdown__date {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .countdown__grid {
+    gap: 10px;
+  }
+
+  .countdown__number-card {
+    width: 62px;
+    height: 70px;
+  }
+
+  .countdown__number {
+    font-size: 1.6rem;
+  }
+
+  .countdown__label {
+    font-size: 0.5rem;
+  }
+
+  .countdown__decor {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .countdown__grid {
+    gap: 24px;
+  }
+
+  .countdown__number-card {
+    width: 88px;
+    height: 96px;
+  }
+
+  .countdown__number {
+    font-size: 2.4rem;
+  }
+}
