@@ -9,7 +9,7 @@ export const EVENT = {
   isoDate: "2026-10-17T17:00:00+08:00",
   time: "5:00 PM onwards",
   venue: "GV's Function Hall",
-  dressCode: "Pastel / Blue",
+  dressCode: "Any Pastel Colors",
   venueMapUrl: "https://maps.app.goo.gl/rD7QribzVVAYroLe6",
   maxGuests: 10,
   firestoreCollection: "rsvps",

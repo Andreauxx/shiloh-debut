@@ -4,6 +4,7 @@ import EnvelopeIntro from './components/EnvelopeIntro/EnvelopeIntro';
 import HeroInvitation from './components/HeroInvitation/HeroInvitation';
 import AboutSection from './components/AboutSection/AboutSection';
 import EventDetails from './components/EventDetails/EventDetails';
+import GiftWishlist from './components/GiftWishlist/GiftWishlist';
 import MemoryGallery from './components/MemoryGallery/MemoryGallery';
 import Countdown from './components/Countdown/Countdown';
 import RSVPForm from './components/RSVPForm/RSVPForm';
@@ -84,6 +85,7 @@ export default function App() {
             <HeroInvitation onRSVPClick={handleRSVPClick} />
             <AboutSection />
             <EventDetails />
+            <GiftWishlist />
             <MemoryGallery />
             <Countdown />
             <RSVPForm />
