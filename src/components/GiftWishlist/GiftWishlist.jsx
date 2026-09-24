@@ -50,6 +50,7 @@ export default function GiftWishlist() {
               <li>Anything that can be kept forever</li>
               <li>Clothes (Shirt size: Medium)</li>
               <li>Shoes (Size: 39)</li>
+              <li>Makeups</li>
             </ul>
           </div>
 
