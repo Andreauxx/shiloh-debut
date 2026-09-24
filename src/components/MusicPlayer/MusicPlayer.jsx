@@ -1,28 +1,7 @@
-import React, { useState, useRef, useCallback } from 'react';
-import { MUSIC } from '../../config/event';
+import React from 'react';
 import './MusicPlayer.css';
 
-export default function MusicPlayer({ visible }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(null);
-
-  const toggleMusic = useCallback(() => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio(MUSIC.src);
-      audioRef.current.loop = true;
-      audioRef.current.volume = 0.4;
-    }
-
-    if (isPlaying) {
-      audioRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      audioRef.current.play().catch((err) => {
-        console.warn('Music playback failed:', err);
-      });
-      setIsPlaying(true);
-    }
-  }, [isPlaying]);
+export default function MusicPlayer({ visible, isPlaying, toggleMusic }) {
 
   if (!visible) return null;
 
