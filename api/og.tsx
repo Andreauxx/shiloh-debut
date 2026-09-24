@@ -1,9 +1,7 @@
 import React from 'react';
 import { ImageResponse } from '@vercel/og';
 
-export const config = {
-  runtime: 'edge',
-};
+
 
 export default function OGImage() {
   return new ImageResponse(
