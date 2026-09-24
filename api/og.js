@@ -4,8 +4,6 @@ export const config = {
   runtime: 'edge',
 };
 
-// Helper to manually create valid React elements for Satori without importing React
-// This bypasses the Vercel Edge bundler's "unsupported modules: react" error in Vite!
 const el = (type, props, ...children) => {
   return {
     type,
@@ -29,9 +27,7 @@ export default async function (request) {
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
-        backgroundColor: '#FCFBF6',
-        backgroundImage: 'radial-gradient(circle at 25px 25px, #F8E7A8 2%, transparent 0%), radial-gradient(circle at 75px 75px, #F8E7A8 2%, transparent 0%)',
-        backgroundSize: '100px 100px',
+        backgroundColor: '#FCFBF6', // solid background instead of radial-gradient
       }
     },
       el('div', {
